@@ -84,6 +84,15 @@ unstable for this relatively small, high-dimensional dataset.
 
 ## Key Results
 
+| Method | Median NRMSE | Pooled R² | Median MAE |
+|---|---:|---:|---:|
+| KNN | 0.870 | 0.345 | 0.770 |
+| missForest | **0.594** | **0.699** | **0.501** |
+| XGBoost | 0.609 | 0.657 | 0.524 |
+| GAIN | 0.797 | 0.327 | 0.999 |
+
+![Comparison bar plot across 4 models with 3 metrics: NRMSE, pooled R-squared, and MAE](figures/imputation_performance.png)
+
 Tree-based methods produced the strongest imputation performance.
 missForest achieved the lowest median NRMSE and MAE and the highest
 pooled R².
@@ -100,6 +109,8 @@ particularly for small biological datasets.**
 ## Impact on Biological Interpretation
 
 Imputation quality affected downstream taxonomic analysis.
+
+![Principal Component Analysis (PCA) of a) GAIN and b) KNN](figures/pca_comparison_gain_knn.png)
 
 PCA and clustering performed on the imputed datasets revealed
 substantial differences in morphological separation between methods.
